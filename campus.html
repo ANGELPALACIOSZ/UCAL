@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Digital - UCAL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function confirmarSalida() {
+            Swal.fire({
+                title: '¿Estás seguro de que quieres salir?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, salir',
+                cancelButtonText: 'No, volver'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "registro.html"; // Cambia 'registro.html' a la URL de tu página de registro
+                }
+            });
+        }
+
+        function toggleSupportBox() {
+            var supportBox = document.getElementById('support-box');
+            if (supportBox.style.display === 'block') {
+                supportBox.style.display = 'none';
+            } else {
+                supportBox.style.display = 'block';
+            }
+        }
+
+        function closeSupportBox() {
+            document.getElementById('support-box').style.display = 'none';
+        }
+
+        function sendMessage() {
+            var input = document.getElementById('support-input');
+            var message = input.value;
+            if (message.trim() !== "") {
+                var newMessage = document.createElement('div');
+                newMessage.className = 'bubble-right';
+                newMessage.innerHTML = '<p>' + message + '</p>';
+                document.querySelector('.support-content').appendChild(newMessage);
+                input.value = ""; // Clear the input field
+                // Scroll to the bottom of the support content
+                var supportContent = document.querySelector('.support-content');
+                supportContent.scrollTop = supportContent.scrollHeight;
+            }
+        }
+
+        function handleInputKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+</head>
+<body>
+    <main class="campus-main">
+        <div class="campus-content">
+            <header class="campus-header">
+                <div class="header-left">
+                    <img src="ima/logo.png" alt="Logo UCAL" class="header-logo">
+                </div>
+                <div class="header-center">
+                    <h1>Universidad de Ciencias y Artes de América Latina</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Buscar..." class="search-bar">
+                        <i class="fas fa-microphone search-mic"></i>
+                    </div>
+                </div>
+            </header>
+            <div class="main-content">
+                <aside class="sidebar-left">
+                    <ul class="sidebar-menu">
+                        <li><i class="fas fa-bars"></i></li>
+                        <li><i class="fas fa-calendar-alt"></i></li>
+                        <li><i class="fas fa-bell"></i></li>
+                        <li><i class="fas fa-envelope"></i></li>
+                        <li><i class="fas fa-cog"></i></li>
+                        <li><i class="fas fa-sign-out-alt" onclick="confirmarSalida()"></i></li>
+                    </ul>
+                </aside>
+                <section class="center-content" style="position: relative;">
+                    <div class="icon-box">
+                        <i class="fas fa-desktop"></i>
+                        <p>Campus Digital</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-envelope"></i>
+                        <p>Correo</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-calendar-alt"></i>
+                        <p>Asistencia</p>
+                    </div>
+                    <div class="icon-box" id="progreso-academico" onclick="window.location.href='progreso-academico.html'">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Progreso académico</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-book"></i>
+                        <p>Biblioteca</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-comments"></i>
+                        <p>Consultas y Solicitudes</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-tie"></i>
+                        <p>Tutor académico</p>
+                    </div>
+                    <!-- Ícono de soporte -->
+                    <div id="support-icon" class="support-icon" onclick="toggleSupportBox()">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <!-- Recuadro de soporte dentro de la sección central -->
+                    <div id="support-box" class="support-box">
+                        <div class="support-header">
+                            <h2>SOPORTE TÉCNICO</h2>
+                        </div>
+                        <div class="support-content">
+                            <div class="bubble-left">
+                                <p>Hola, Angel Herrera, soy tu asistente virtual, ¿Cuál es tu consulta?</p>
+                            </div>
+                        </div>
+                        <div class="support-input">
+                            <input id="support-input" type="text" placeholder="Escribe aquí tu duda...." onkeypress="handleInputKeyPress(event)">
+                        </div>
+                    </div>
+                </section>
+                <section class="right-content">
+                    <div class="greeting">
+                        <i class="fas fa-user-circle"></i>
+                        <h2>Hello, Angel Herrera</h2>
+                        <div class="greeting-background">
+                            <!-- Fondo con gradiente púrpura -->
+                        </div>
+                    </div>
+                    <div class="reminder">
+                        <h2>RECORDATORIO</h2>
+                        <div class="reminder-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <p><strong>Próxima clase:</strong> Miér. 9:30 &gt;&gt; 10:30</p>
+                            <p>Experiencias Formativas</p>
+                        </div>
+                        <div class="reminder-item">
+                            <i class="fas fa-pencil-alt"></i>
+                            <p><strong>Próxima entrega:</strong> Miér. 23:59</p>
+                            <p>Experiencias Formativas</p>
+                        </div>
+                        <div class="reminder-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <p><strong>Próxima clase:</strong> Jue. 9:30 &gt;&gt; 10:30</p>
+                            <p>Herramientas Digitales</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
