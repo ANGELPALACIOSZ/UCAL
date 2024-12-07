@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar, .sidebar-right {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar .logo img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 80%;
+    height: auto;
+    border-radius: 24%;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 60px;
+}
+
+.menu ul li a img {
+    width: 40px;
+    display: block;
+    margin: 0 auto;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.header h2 {
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.attendance table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance table, th, td {
+    border: 8px solid #295383;
+    padding: 30px;
+    text-align: center;
+}
+
+.user-info, .reminders {
+    margin-bottom: 20px;
+}
+
+.user-info p {
+    text-align: center;
+}
+
+.reminders h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.reminders ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reminders ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #8a5fbb;
+    border-radius: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
