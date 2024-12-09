@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Interactivo</title>
+    <link rel="stylesheet" href="calendario.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="imagenes/logoucal.png" alt="Logo">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#"><img src="imagenes/opciones.png" alt="opciones"></a></li>
+                    <li><a href="#"><img src="imagenes/calendario.png" alt="Calendario"></a></li>
+                    <li><a href="#"><img src="imagenes/correo.png" alt="correo"></a></li>
+                    <li><a href="#"><img src="imagenes/ajustes.png" alt="ajustes"></a></li>
+                    <li><a href="#"><img src="imagenes/salir.png" alt="salir"></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Calendario</h1>
+            </header>
+            <section class="calendar">
+                <div class="calendar-header">
+                    <h2 id="monthYear"></h2>
+                    <button onclick="prevMonth()">&#10094;</button>
+                    <button onclick="nextMonth()">&#10095;</button>
+                </div>
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Dom</th>
+                            <th>Lun</th>
+                            <th>Mar</th>
+                            <th>Mié</th>
+                            <th>Jue</th>
+                            <th>Vie</th>
+                            <th>Sáb</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody">
+                        <!-- Las celdas del calendario se generarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <aside class="sidebar-right">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="user-info">
+                <p>Hola, <strong>Angel Herrera</strong></p>
+            </div>
+            <div class="reminders">
+                <h3>RECORDATORIO</h3>
+                <ul>
+                    <li>
+                        <p>Próxima clase: Miér. 9:30 - 10:30</p>
+                        <p>Experiencias Formativas</p>
+                    </li>
+                    <li>
+                        <p>Próxima entrega: Miér. 23:59</p>
+                        <p>Experiencias Formativas</p>
+                    </li>
+                    <li>
+                        <p>Próxima clase: Jue. 9:30 - 10:30</p>
+                        <p>Herramientas digitales</p>
+                    </li>
+                    <li>
+                        <p>Próxima entrega: Jue. 23:59</p>
+                        <p>Herramientas digitales</p>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <script src="calendario.js"></script>
+</body>
+</html>
